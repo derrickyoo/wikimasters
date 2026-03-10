@@ -10,6 +10,7 @@ export async function getArticles() {
       createdAt: articles.createdAt,
       content: articles.content,
       author: usersSync.name,
+      imageUrl: articles.imageUrl,
     })
     .from(articles)
     .leftJoin(usersSync, eq(articles.authorId, usersSync.id));
@@ -25,6 +26,7 @@ export async function getArticleById(id: number) {
       createdAt: articles.createdAt,
       content: articles.content,
       author: usersSync.name,
+      imageUrl: articles.imageUrl,
     })
     .from(articles)
     .leftJoin(usersSync, eq(articles.authorId, usersSync.id))
